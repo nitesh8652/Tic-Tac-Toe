@@ -1,3 +1,42 @@
-p{
-    color: beige;
+*{
+    margin: 0;
+    padding: 0;
 }
+
+body{
+    background-color: bisque;
+    text-align: center;
+}
+.container{
+   
+    height: 68vh;
+    width: 98vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+    
+    
+    
+}
+
+.boxes{
+    
+    height: 60vmin;
+    width: 60vmin;
+
+    
+}
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 5px;
+  
+}
+
+h3 {
+    color: blue;  
+    font-size: 1.5em; 
+    margin-top: 40px;
+} 
