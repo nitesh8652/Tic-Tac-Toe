@@ -1,5 +1,7 @@
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#reset-btn");
+let imp = document.querySelector("#imp");
+const msgContainer = document.querySelector(".msg-container");
 
 let turnO = true;
 const patterns = [
@@ -28,6 +30,13 @@ boxes.forEach((box) => {
 
     });
 });
+
+const checking_winner = (winner) => {
+    msg.innerText = `Congratulations, Winner is ${winner}`;
+    msgContainer.classList.remove("hide");
+}
+
+
 const winner = () => {
     for (let wins of patterns) {
         console.log(boxes[patterns[0]], boxes[patterns[1]], boxes[patterns[2]]);
@@ -38,10 +47,26 @@ const winner = () => {
         if (position0 != "" && position1 != "" && position2 !== "") {
             if (position0 == position1 && position1 == position2) {
                 console.log("Winnrrrr", position0);
+                checking_winner(position0);
             }
         }
     }
 }
+
+// let reset =()=>{
+//     cell.textContent='';
+//     cell.classList.remove(turnO);
+// }
+
+// let Alert =(text)=>{
+//     alert.style.display="flex";
+//     alert.innerHTML="text";
+//     setTimeout(removeAlert, 3000);
+// }
+
+// let removeAlert =()=>{
+//     alert.style.display="none";
+// }
 
 
 
