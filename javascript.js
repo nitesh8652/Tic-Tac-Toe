@@ -15,6 +15,14 @@ const patterns = [
     [6, 7, 8],
 ];
 
+const resetg =()=>{
+    turnO = true;
+    // enabledbox();
+    ebox();
+    msgContainer.classList.add("hide");
+    
+}
+
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
         console.log("clicked");
@@ -31,9 +39,33 @@ boxes.forEach((box) => {
     });
 });
 
+
+const disabledbox=()=>{
+    for(let box of boxes){
+        box.disabled=true;
+    }
+    }
+// const enabledbox=()=>{
+//     for(let box of boxes){
+//         box.disabled=false;
+//         box.innerText="";
+//     }
+//     }
+
+
+const ebox=()=>{
+for (let box of boxes){
+    box.disabled=false;
+    box.innerText="";
+}
+}
+
 const checking_winner = (winner) => {
-    msg.innerText = `Congratulations, Winner is ${winner}`;
+    msg.innerText = ` ${winner} Wins!`;
     msgContainer.classList.remove("hide");
+    document.getElementById("hehe").style.backgroundColor = " red";
+    disabledbox();
+
 }
 
 
@@ -47,32 +79,18 @@ const winner = () => {
         if (position0 != "" && position1 != "" && position2 !== "") {
             if (position0 == position1 && position1 == position2) {
                 console.log("Winnrrrr", position0);
+
                 checking_winner(position0);
             }
         }
     }
 }
 
-// let reset =()=>{
-//     cell.textContent='';
-//     cell.classList.remove(turnO);
-// }
-
-// let Alert =(text)=>{
-//     alert.style.display="flex";
-//     alert.innerHTML="text";
-//     setTimeout(removeAlert, 3000);
-// }
-
-// let removeAlert =()=>{
-//     alert.style.display="none";
-// }
 
 
-
-
-
-
-
+document.addEventListener('DOMContentLoaded', function() {
+    const reset = document.getElementById('reset');
+    reset.addEventListener("click", resetg);
+});
 
 
